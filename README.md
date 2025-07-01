@@ -33,9 +33,9 @@ Here’s an example of how to use the logkit in your application.
 package main
 
 import (
-    "github.com/DucTran999/logkit"
-    "os"
-    "log"
+	"log"
+
+	"github.com/DucTran999/logkit"
 )
 
 func main() {
@@ -51,13 +51,13 @@ func main() {
 	}
 	defer logInst.Sync()
 
-    // Log at different levels
-    logInst.Debug("Debug log")
-    logInst.Info("Info log")
-    logInst.Warn("Warning log")
-    logInst.Error("Error log")
-    // Note: Fatal() exits the program and Panic() causes a panic
-    // Use these methods only when appropriate for your application
+	// Log at different levels
+	logInst.Debug("Debug log")
+	logInst.Info("Info log")
+	logInst.Warn("Warning log")
+	logInst.Error("Error log")
+	// Note: Fatal() exits the program and Panic() causes a panic
+	// Use these methods only when appropriate for your application
 }
 ```
 
