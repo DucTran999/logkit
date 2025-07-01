@@ -9,7 +9,7 @@ import (
 	"go.uber.org/zap"
 )
 
-func Test_Panicf(t *testing.T) {
+func TestPanicf(t *testing.T) {
 	conf := logkit.Config{
 		Environment: logkit.Staging,
 	}
@@ -32,7 +32,7 @@ func Test_Panicf(t *testing.T) {
 	logInst.Panicf("example panic log %v", errors.New("panic test"))
 }
 
-func Test_DPanicInDevelopment(t *testing.T) {
+func TestDPanicInDevelopment(t *testing.T) {
 	conf := logkit.Config{
 		Environment: logkit.Development,
 	}
@@ -55,7 +55,7 @@ func Test_DPanicInDevelopment(t *testing.T) {
 	logInst.DPanic("example dpanic log")
 }
 
-func Test_DPanicNotInDevelopment(t *testing.T) {
+func TestDPanicNotInDevelopment(t *testing.T) {
 	conf := logkit.Config{
 		Environment: logkit.Production,
 	}
@@ -78,7 +78,7 @@ func Test_DPanicNotInDevelopment(t *testing.T) {
 	logInst.DPanic("example dpanic log")
 }
 
-func Test_DPanicfInDevelopment(t *testing.T) {
+func TestDPanicfInDevelopment(t *testing.T) {
 	conf := logkit.Config{
 		Environment: logkit.Development,
 	}
@@ -89,17 +89,17 @@ func Test_DPanicfInDevelopment(t *testing.T) {
 	panicOccurred := false
 	defer func() {
 		if r := recover(); r != nil {
-			logInst.Error("example dpanicd log", zap.Any("stack", r))
+			logInst.Error("example dpanicf log", zap.Any("stack", r))
 			panicOccurred = true
 		}
 		_ = logInst.Sync()
-		require.True(t, panicOccurred, "Expected panic  occur in Development environment")
+		require.True(t, panicOccurred, "Expected panic occur in Development environment")
 	}()
 
 	logInst.DPanicf("example dpanicf log err:%v", errors.New("panic test"))
 }
 
-func Test_DPanicfNotInDevelopment(t *testing.T) {
+func TestDPanicfNotInDevelopment(t *testing.T) {
 	conf := logkit.Config{
 		Environment: logkit.Staging,
 	}
@@ -110,7 +110,7 @@ func Test_DPanicfNotInDevelopment(t *testing.T) {
 	panicOccurred := false
 	defer func() {
 		if r := recover(); r != nil {
-			logInst.Error("example dpanicd log", zap.Any("stack", r))
+			logInst.Error("example dpanicf log", zap.Any("stack", r))
 			panicOccurred = true
 		}
 		_ = logInst.Sync()
