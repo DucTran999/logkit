@@ -17,7 +17,7 @@ func main() {
 	if err != nil {
 		log.Fatalln("Init logger ERR", err)
 	}
-	defer logInst.Sync()
+	defer logInst.Sync() //nolint
 
 	// Log at different levels
 	logInst.Debug("Debug log")
