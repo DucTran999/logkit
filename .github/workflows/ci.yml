@@ -37,7 +37,7 @@ jobs:
         with:
           go-version-file: go.mod
       - name: Run unittest
-        run: task test
+        run: go test ./...
 
   test-coverage:
     name: codecov-report
