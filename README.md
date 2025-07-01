@@ -1,10 +1,12 @@
 # Logkit
 
-This package wraps zerolog to simplify configuration and logging in Go applications.
+[![CI](https://github.com/DucTran999/logkit/actions/workflows/ci.yml/badge.svg)](https://github.com/DucTran999/logkit/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/DucTran999/logkit)](https://goreportcard.com/report/github.com/DucTran999/logkit)
+[![Go](https://img.shields.io/badge/Go-1.23-blue?logo=go)](https://golang.org)
+[![codecov](https://codecov.io/gh/DucTran999/logkit/branch/master/graph/badge.svg)](https://codecov.io/gh/DucTran999/logkit)
+[![License](https://img.shields.io/github/license/DucTran999/logkit)](LICENSE)
 
-## Coverage
-
-[![codecov](https://codecov.io/gh/DucTran999/shared-pkg/branch/master/graph/badge.svg)](https://codecov.io/gh/DucTran999/shared-pkg/75%25-yellow)
+This package wraps Uber's zap library to simplify configuration and logging in Go applications.
 
 ## Installation
 
@@ -12,16 +14,18 @@ This package wraps zerolog to simplify configuration and logging in Go applicati
 go get github.com/DucTran999/logkit
 ```
 
-## Features
+## 🚀 Features
 
-- Configurable log levels: `Debug`, `Info`, `Warn`, `Error`, `Fatal`, `Panic`, `Dpanic`
-- JSON or human-readable log formats (Console).
-- Flexible log output (stdout, file, or other destinations).
-- Timestamps in RFC3339 format.
-- Development (Dpanic) and production-friendly logging.
-- Log level filtering and conditional logging.
+- 🪵 Configurable log levels: Debug, Info, Warn, Error, Fatal, Panic, Dpanic
+- 🎛️ JSON or human-readable log formats (console).
+- 🔁 Flexible output targets: stdout, file, or any io.Writer.
+- 🕒 RFC3339 timestamp formatting.
+- 🛠️ Development and production-friendly logging.
+- 🧵 Log level filtering and structured context-aware logging.
 
-## Usage
+---
+
+## 📦 Usage
 
 Here’s an example of how to use the logkit in your application.
 
@@ -52,37 +56,28 @@ func main() {
     logInst.Info("Info log")
     logInst.Warn("Warning log")
     logInst.Error("Error log")
-    logInst.Fatal("Fatal error log")  // Exits program after logging
-    logInst.Panic("Panic log")        // Panics after logging
+    // Note: Fatal() exits the program and Panic() causes a panic
+    // Use these methods only when appropriate for your application
 }
 ```
 
-## Configuration
+## 🧪 Testing
 
-The logger can be configured with the following options:
-
-- Environment: Set to logger.Development or logger.Production depending on the mode.
-- LogToFile: Set to true to enable logging to a file. The file path is specified by FilePath.
-- FilePath: The location where the log file will be saved.
-
-Example configuration:
-
-```go
-conf := logkit.Config{
-    Environment: logger.Production,  // Switch to Development for dev mode
-    LogToFile:   true,
-    FilePath:    "logs/app.log",
-}
+```sh
+# run: go test ./... if you not install task
+task test
 ```
 
-## Testing
-
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
 
-## License
+---
 
-MIT License
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
