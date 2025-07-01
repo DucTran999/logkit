@@ -27,7 +27,7 @@ jobs:
           args: --timeout 5m --config .golangci.yml
 
   unittest:
-    name: golangci-lint-v2
+    name: go-unittest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
