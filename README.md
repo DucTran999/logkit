@@ -1,8 +1,8 @@
 # Logkit
 
-[![CI](https://github.com/DucTran999/logkit/actions/workflows/ci.yml/badge.svg)](https://github.com/DucTran999/logkit/actions/workflows/ci.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/DucTran999/logkit)](https://goreportcard.com/report/github.com/DucTran999/logkit)
 [![Go](https://img.shields.io/badge/Go-1.23-blue?logo=go)](https://golang.org)
+[![CI](https://github.com/DucTran999/logkit/actions/workflows/ci.yml/badge.svg)](https://github.com/DucTran999/logkit/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/DucTran999/logkit/branch/master/graph/badge.svg)](https://codecov.io/gh/DucTran999/logkit)
 [![License](https://img.shields.io/github/license/DucTran999/logkit)](LICENSE)
 

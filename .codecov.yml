@@ -1,0 +1,12 @@
+coverage:
+  status:
+    project:
+      default:
+        threshold: 1%
+        target: auto
+        flags: []
+        paths: []
+        color:
+          - red: 0
+          - yellow: 50
+          - green: 70
